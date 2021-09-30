@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { MetaMaskProvider } from 'metamask-react';
+import { MetaMaskProvider } from './context';
 
 ReactDOM.render(
   <React.StrictMode>
     <MetaMaskProvider>
+      <h2 className="pg-title">React DApp Boilerplate</h2>
       <App />
     </MetaMaskProvider>
   </React.StrictMode>,

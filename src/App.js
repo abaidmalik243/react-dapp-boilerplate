@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import { useMetaMask } from 'metamask-react';
+import { useMetaMask } from './context';
 
 function App() {
 
-  const { status, connect, account } = useMetaMask();
+  const { status, connect, account, chainId, ethereum } = useMetaMask();
+  // console.log('chainId :: ', chainId, ethereum, window.ethereum);
 
   if (status === "initializing") return <div>Synchronisation with MetaMask ongoing...</div>
 
@@ -16,26 +15,7 @@ function App() {
 
   if (status === "connected") return <div>Connected account: {account}</div>
 
-  return 'Something went wrong on MetaMask Integration';
-
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+  return null;
 }
 
 export default App;
